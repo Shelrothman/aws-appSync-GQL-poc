@@ -91,7 +91,7 @@ function App() {
                     <button onClick={() => setScreen("sign-up")}>Sign Up</button>
                 </>}
                 <img src={logo} alt="Binaryville logo" className="logo" />
-                {userName.length > 1 && <button id="sign-out" onClick={onSignOut}>
+                {(userName.length > 1 && userName.length > 1) && <button id="sign-out" onClick={onSignOut}>
                     Sign Out
                 </button>}
             </header>
@@ -99,8 +99,8 @@ function App() {
                 {(screen === "home" && userName.length > 1) && <Home
                     pullData={pullData}
                     onCreatePost={onCreatePost}
-                    userName={userName}
-                    setScreen={setScreen}
+                    // userName={userName}
+                    // setScreen={setScreen}
                 />}
                 {screen === "sign-up" && <SignUp
                     setScreen={setScreen} setUserName={setUserName}

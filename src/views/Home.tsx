@@ -1,28 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
-import { signOut } from '@aws-amplify/auth';
 
 type HomeProps = {
     pullData: () => void;
     onCreatePost: (e: any) => Promise<void>;
-    userName: string;
-    setScreen: (screen: string) => void;
 }
 
-export const Home = ({ pullData, onCreatePost, userName, setScreen }: HomeProps) => {
+export const Home = ({ pullData, onCreatePost }: HomeProps) => {
 
-    // console.log('userName:', userName)
-
-    const onSignOut = async () => {
-        try {
-            const confirm = window.confirm(`Are you sure you want to sign out from ${userName}`);
-            if (!confirm) return;
-            await signOut();
-            setScreen('sign-in');
-        } catch (error) {
-            console.error('Error signing out:', error);
-        }
-    }
 
     React.useEffect(() => {
         pullData()
@@ -32,11 +17,11 @@ export const Home = ({ pullData, onCreatePost, userName, setScreen }: HomeProps)
     return (
         <div>
             <div className="container">
-                <button id="create-post" onClick={onCreatePost}>
+                {/*                 <button id="create-post" onClick={onCreatePost}>
                     Create Post
-                </button>
+                </button> */}
                 <div className="posts" />
-                <form id="create-post" className="form hidden background-color:blue-dcf0fb padding:32px">
+                <form id="create-post" onSubmit={onCreatePost}>
                     <h2>Create New Post</h2>
                     <div>
                         <label htmlFor="description">
@@ -53,9 +38,8 @@ export const Home = ({ pullData, onCreatePost, userName, setScreen }: HomeProps)
                             padding: '12px',
                             width: '100%',
                         }} />
-
                     </div>
-                    <div>
+                    <div style={{ marginBottom: '1rem', marginTop: '1rem' }}>
                         <label htmlFor="img">
                             Photo Upload
                         </label>

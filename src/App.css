@@ -1,6 +1,6 @@
 #root {
-    max-width: 1280px;
-    margin: 0 auto;
+    /* max-width: 1280px; */
+    margin: auto;
     padding: 2rem;
     text-align: center;
 }
@@ -48,13 +48,6 @@
     display: none;
 }
 
-.header {
-    padding: 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
 .logo {
     max-width: 150px;
 }
@@ -77,9 +70,21 @@ input[type='submit'] {
     border: none;
 }
 
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    padding: 1rem;
+}
+
 .container {
     margin: 0 auto;
-    max-width: 600px;
+    /* max-width: 600px; */
 }
 
 .post {
