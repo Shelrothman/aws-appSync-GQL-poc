@@ -1,4 +1,29 @@
-# React + TypeScript + Vite
+# What is this?
+
+**POC of a full stack application utilizing AWS Amplify and AppSync GraphQL APIs**
+
+Resources:
+
+- [LinkedIn Learning Course](https://www.linkedin.com/learning-login/share?account=75072442&forceAccount=false&redirect=https%3A%2F%2Fwww.linkedin.com%2Flearning%2Fbuild-a-full-stack-javascript-application-using-aws-amplify%3Ftrk%3Dshare_ent_url%26shareId%3DrX3UEsaJQpqAEq1vhnACgw%253D%253D)
+- https://aws.amazon.com/appsync/
+- https://graphql.org/graphql-js/running-an-express-graphql-server/
+
+
+## How do I run this?
+
+First you will need vite installed globally
+
+`npm install -g vite`
+
+Then you will need to install the dependencies:
+
+`npm install`
+
+Finally, you will need to run dev:
+
+`npm run dev`
+
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
