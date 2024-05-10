@@ -1,33 +1,36 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
-import logo from '../assets/logo.svg';
+import { signOut } from '@aws-amplify/auth';
 
 type HomeProps = {
     pullData: () => void;
     onCreatePost: (e: any) => Promise<void>;
+    userName: string;
+    setScreen: (screen: string) => void;
 }
 
-export const Home = ({ pullData, onCreatePost }: HomeProps) => {
+export const Home = ({ pullData, onCreatePost, userName, setScreen }: HomeProps) => {
 
+    // console.log('userName:', userName)
 
+    const onSignOut = async () => {
+        try {
+            const confirm = window.confirm(`Are you sure you want to sign out from ${userName}`);
+            if (!confirm) return;
+            await signOut();
+            setScreen('sign-in');
+        } catch (error) {
+            console.error('Error signing out:', error);
+        }
+    }
 
     React.useEffect(() => {
         pullData()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
         <div>
-            <header className="header">
-                <img src={logo} alt="Binaryville logo" className="logo" />
-                <div>
-                    <button id="sign-out" className="hidden">Sign Out</button>
-                </div>
-                <div className="hidden logged-in">
-                    <a href="/sign-in.html" id="sign-in" className="button">Sign In</a>
-                    <a href="/sign-up.html" id="sign-up" className="button">Sign Up</a>
-                </div>
-            </header>
             <div className="container">
                 <button id="create-post" onClick={onCreatePost}>
                     Create Post

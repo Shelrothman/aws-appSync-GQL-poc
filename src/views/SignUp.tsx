@@ -60,33 +60,33 @@ export const SignUp = ({ setScreen, setUserName }: SignUpProps) => {
         <div className="container">
             <div className="background-color:blue-dcf0fb padding:32px">
                 <form id="sign-up" onSubmit={onSignUp}>
-                    <h3 className="font-size:28px font-weight:500 line-height:1.142 color:blue-265f8e margin-bottom:16px">
-                        Sign Up
-                    </h3>
-                    <label className="color:blue-265f8e display:block padding-bottom:8px font-size:14px font-weight:500" htmlFor="email">
-                        Email
-                    </label>
+                    <h2>Sign Up</h2>
+                    <label htmlFor="email">Email</label>
+                    &nbsp;
                     <input id="email" name="email" required type="email"
                         value={emailInput}
                         onChange={(e) => setEmailInput(e.target.value)}
                     />
-                    <label className="color:blue-265f8e display:block padding-bottom:8px font-size:14px font-weight:500" htmlFor="password">
-                        Password
-                    </label>
+                    &nbsp;
+                    <label htmlFor="password">Password</label>
+                    &nbsp;
                     <input id="password" name="password" required type="password" autoComplete="current-password"
                         value={passwordInput}
                         onChange={(e) => setPasswordInput(e.target.value)}
                     />
                     <br />
-                    <label className="color:blue-265f8e display:block padding-bottom:8px font-size:14px font-weight:500" htmlFor="phone-number">
-                        Phone Number
-                    </label>
+                    <label htmlFor="phone-number">Phone Number</label>
+                    &nbsp;
                     <input id="phone-number" name="phone-number" required
                         value={phoneNumberInput}
                         onChange={(e) => setPhoneNumberInput(e.target.value)}
                     />
                     <input type="submit" defaultValue="Sign Up" />
                 </form>
+            </div>
+            <div style={{ marginTop: '16px', marginLeft: '10rem', border: '1px solid' }}>
+                <h4>Already have an account?</h4>
+                <button onClick={() => setScreen('sign-in')}>Sign In</button>
             </div>
         </div>
 

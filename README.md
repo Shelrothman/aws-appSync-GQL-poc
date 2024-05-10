@@ -7,7 +7,8 @@ Resources:
 - [LinkedIn Learning Course](https://www.linkedin.com/learning-login/share?account=75072442&forceAccount=false&redirect=https%3A%2F%2Fwww.linkedin.com%2Flearning%2Fbuild-a-full-stack-javascript-application-using-aws-amplify%3Ftrk%3Dshare_ent_url%26shareId%3DrX3UEsaJQpqAEq1vhnACgw%253D%253D)
 - https://aws.amazon.com/appsync/
 - https://graphql.org/graphql-js/running-an-express-graphql-server/
-
+- https://mobilelive.medium.com/graphql-pitfalls-and-how-we-avoid-them-a-comprehensive-guide-ab11a20d657
+- https://docs.amplify.aws/react/build-a-backend/
 
 ## How do I run this?
 

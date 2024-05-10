@@ -9,7 +9,7 @@ type SignInProps = {
     setUserName: (userName: string) => void;
 }
 
- 
+
 export const SignIn = ({ setScreen, setUserName }: SignInProps) => {
 
     const [ emailInput, setEmailInput ] = React.useState('');
@@ -35,9 +35,9 @@ export const SignIn = ({ setScreen, setUserName }: SignInProps) => {
 
     return (
         <div className="container">
-            <div className="background-color:blue-dcf0fb padding:32px">
+            <div>
                 <form id="sign-in" onSubmit={onSignIn}>
-                    <h3>Sign In</h3>
+                    <h2>Sign In</h2>
                     <label htmlFor="email">Email</label>
                     &nbsp;
                     <input id="email" name="email" required type="email"
@@ -45,9 +45,7 @@ export const SignIn = ({ setScreen, setUserName }: SignInProps) => {
                         onChange={(e) => setEmailInput(e.target.value)}
                     />
                     &nbsp;
-                    <label className="color:blue-265f8e display:block padding-bottom:8px font-size:14px font-weight:500" htmlFor="password">
-                        Password
-                    </label>
+                    <label htmlFor="password">Password</label>
                     &nbsp;
                     <input id="password" name="password" required type="password" autoComplete="current-password"
                         value={passwordInput}
@@ -56,6 +54,10 @@ export const SignIn = ({ setScreen, setUserName }: SignInProps) => {
                     &nbsp;
                     <input type="submit" defaultValue="Sign In" />
                 </form>
+            </div>
+            <div style={{ marginTop: '16px', marginLeft: '10rem', border: '1px solid' }}>
+                <h4>Don't have an account?</h4>
+                <button onClick={() => setScreen('sign-up')}>Sign Up</button>
             </div>
         </div>
 
